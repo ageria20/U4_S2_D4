@@ -12,15 +12,15 @@ public class Order {
     private LocalDate orderDate;
     private LocalDate deliveryDate;
     private List<Product> productList;
-    private Costumer costumer;
+    private Customer customer;
 
-    public Order(String status, List<Product> productList, Costumer costumer) {
+    public Order(String status, List<Product> productList, Customer customer) {
         this.id = random.nextInt(10000, 20000);
         this.status = status;
         this.orderDate = LocalDate.now();
         this.deliveryDate = this.orderDate.plusDays(3);
         this.productList = productList;
-        this.costumer = costumer;
+        this.customer = customer;
     }
 
 
@@ -44,8 +44,8 @@ public class Order {
         return productList;
     }
 
-    public Costumer getCostumer() {
-        return costumer;
+    public Customer getCustomer() {
+        return customer;
     }
 
     @Override
@@ -56,6 +56,6 @@ public class Order {
                 ", orderDate=" + orderDate +
                 ", deliveryDate=" + deliveryDate +
                 ", productList=" + productList +
-                ", costumer=" + costumer;
+                ", costumer=" + customer;
     }
 }
